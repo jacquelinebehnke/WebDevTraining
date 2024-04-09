@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button{
+            display:flex;
+            justify-content: center;
+            margin: 10px;
+            background-color: #65AC1E;
+            color: white;
+
+        }
+        .zahl{
+            display: flex;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button class ="button" id="increase">Increase</button>
+        <button class ="button" id="decrease">Decrease</button>
+        <button class ="button" id ="reset">Reset</button>
+        <p class="zahl"><b id="label">0</b></p>
+
+        <script>
+            const increase = document.getElementById("increase");
+            const decrease = document.getElementById("decrease");
+            const reset = document.getElementById("reset");
+            const label = document.getElementById("label");
+            let count = 0;
+            label.innerText = count;
+
+            <!-- increase -->
+            increase.addEventListener("click", () => {
+                count++;
+                label.innerText = count;
+            })
+            decrease.addEventListener("click", () => {
+                count--;
+                label.innerText = count;
+            })
+            reset.addEventListener("click", () => {
+                count = 0
+                label.innerText = count;
+            })
+        </script>
+    </main>
+</body>
+</html>
